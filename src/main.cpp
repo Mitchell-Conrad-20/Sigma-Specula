@@ -1,18 +1,31 @@
 #include <Arduino.h>
+#include <ESP_8_BIT_GFX.h>
+#include "defines.h"
 
-// put function declarations here:
-int myFunction(int, int);
+bool init_gfx(){
+  // Initial setup of graphics library
+  display.begin();
+  return true;
+}
 
+void display_clear(){
+  display.waitForFrame();
+  display.fillScreen(0);
+}
+ 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  init_gfx();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // clear display
+  display_clear();
+  // redraw material 
+  display.drawRoundRect(25,25,50,50,4,CYAN);
+  display.setTextSize(1); // Set text size to 1 (smallest)
+  display.setTextColor(RED);
+  display.setCursor(0, 0);
+  display.println(word_vomit);
 }
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
-}
+ 
