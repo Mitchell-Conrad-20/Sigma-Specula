@@ -1,3 +1,6 @@
+/*
+  Use: Maps pixels horizontally and vertically onto display to allow for quick GUI creation
+*/ 
 void draw_debug(){
     // draw vertical (Y) pixel position bar 
     for (int y = 0; y < display.height(); y += 8) {
@@ -19,7 +22,9 @@ void draw_debug(){
     }
 
 }
-
+/*
+  Use: Main home screen GUI
+*/ 
 void main_app_screen(){
     display_clear();
     int x = int(9*(display.width()/14));

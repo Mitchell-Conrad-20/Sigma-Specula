@@ -1,9 +1,14 @@
-
+/*
+  Use: initialize the ESP_8bit
+*/ 
 bool init_gfx(){
   // Initial setup of graphics library
   display.begin();
   return true;
 }
+/*
+  Use: Reverse a text string for a mirrored display
+*/ 
 String mirror_text(String text){
   String mirroredStr = "";
   for (int i = text.length() - 1; i >= 0; i--) {
@@ -11,9 +16,9 @@ String mirror_text(String text){
   }
   return mirroredStr;
 }
-
-
-
+/*
+  Use: Clear the display 
+*/
 void display_clear(){
   display.waitForFrame();
   display.fillScreen(0);
