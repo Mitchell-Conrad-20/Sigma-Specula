@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "ESP32 PICO D4")(type "KiCad")(uri "C:/Users/jimke/Downloads/ul_ESP32-PICO-D4/KiCADv6/2024-06-01_21-11-34.kicad_sym")(options "")(descr ""))
+  (lib (name "Proant440")(type "KiCad")(uri "C:/Users/jimke/Downloads/PRO_OB_440/PRO-OB-440.kicad_sym")(options "")(descr ""))
+)
