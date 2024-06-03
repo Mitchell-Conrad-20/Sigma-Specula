@@ -1,6 +1,16 @@
 import tkinter as tk
 import re
+import tkinter as tk
+from tkinter import filedialog
 
+def select_file():
+    root = tk.Tk()
+    root.withdraw()  # Hide the main window
+    file_path = filedialog.askopenfilename()  # Open the file dialog and return the selected file path
+    root.destroy()  # Destroy the root window to avoid memory leaks
+    return file_path
+
+ 
 class BitmapEditor:
     def __init__(self, master, filename):
         self.master = master
@@ -79,6 +89,5 @@ class BitmapEditor:
                     break
 
 root = tk.Tk()
- 
-editor = BitmapEditor(root, 'C:\\Users\\james\\Desktop\\Newfolder\\bit.txt')
+editor = BitmapEditor(root, select_file())
 root.mainloop()

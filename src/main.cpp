@@ -6,10 +6,6 @@
 #include "font.h"
 #include "mirror_text.h"
 
-
-
-
- 
 void setup() {
   Serial.begin(9600);
   init_gfx();
@@ -17,5 +13,8 @@ void setup() {
 }
 
 void loop() {
-  print_mirrored("TESTING 12345",14,100,16);
+  delay(200);
+  display_clear();
+  print_mirrored("TESTING 12345",14,100,16, MAGENTA);
+  print_mirrored("TESTING 12345",14,140,8, WHITE);
 }
