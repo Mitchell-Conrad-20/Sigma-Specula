@@ -3,18 +3,19 @@
 #include "defines.h"
 #include "gfx_functions.h"
 #include "apps.h"
-#include "QuickCapTouch.h"
+#include "font.h"
+#include "mirror_text.h"
 
-QuickCapTouch sensor = QuickCapTouch(27, 30, 1000);
+
+
+
  
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   init_gfx();
+  display.fillScreen(0);
 }
 
 void loop() {
-  // clear display
-  main_app_screen();
-  sensor.tick();
-  Serial.println(sensor.getState());
+  print_mirrored("TESTING 12345",14,100,16);
 }
