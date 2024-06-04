@@ -1,10 +1,9 @@
 /*
   Use: initialize the ESP_8bit
 */ 
-bool init_gfx(){
+void init_gfx(){
   // Initial setup of graphics library
   display.begin();
-  return true;
 }
 /*
   Use: Reverse a text string for a mirrored display

@@ -1,26 +1,7 @@
-
-#include <Arduino.h>
-#include <ESP_8_BIT_GFX.h>
-#include "defines.h"
-#include "gfx_functions.h"
-#include "apps.h"
-#include "font.h"
-#include "mirror_text.h"
 #include "esp32notifications.h"
 
-
-
-
 //------------ ANCS Variables ------------//
-#define HARDWARE_STANDARD
 
-#ifdef HARDWARE_STANDARD
-    #define BUTTON_A    25 // left button - use this GPIO pin
-    #define BUTTON_B    26 // center button - use this GPIO pin
-    #define BUTTON_C    27 // right button - use this GPIO pin
-#else
-    #error Hardware buttons not supported!
-#endif
 // Create an interface to the BLE notification library
 BLENotifications notifications;
 // Holds the incoming call's ID number, or zero if no notification
@@ -87,40 +68,15 @@ void init_ancs() {
     notifications.setRemovedCallback(onNotificationRemoved);
 }
 
-void setup() {
-  Serial.begin(9600);
-  
-  while(!Serial) {
-        delay(10);
-  }
-  Serial.println("ESP32-ANCS-Notifications Example");
-  Serial.println("------------------------------------------");    
-  // Set up the BLENotification library
-  notifications.begin("BLEConnection device name");
-  notifications.setConnectionStateChangedCallback(onBLEStateChanged);
-  notifications.setNotificationCallback(onNotificationArrived);
-  notifications.setRemovedCallback(onNotificationRemoved);
-
-
-  // uncomment the following line to see ANCS no longer work!
-  //init_gfx();
-  //display.fillScreen(0);
+void accept_incoming_call(){
+    Serial.println("Receiving Call!"); 
+    notifications.actionPositive(incomingCallNotificationUUID);
 }
 
-void loop() {
-  // delay(200);
-  // display_clear();
-  // print_mirrored("TESTING 12345",14,100,16, MAGENTA);
-  // print_mirrored("TESTING 12345",14,140,8, WHITE);
-  if (incomingCallNotificationUUID > 0) {
-		// Check to see if the user has pressed an action button
-	    if (digitalRead(BUTTON_A) == LOW) {
-	      Serial.println("Positive action."); 
-	        notifications.actionPositive(incomingCallNotificationUUID);
-	    }
-	    else if (digitalRead(BUTTON_C) == LOW) {
-	      Serial.println("Negative action."); 
-	        notifications.actionNegative(incomingCallNotificationUUID);
-	    }
-    }
+void deny_incoming_call(){
+    Serial.println("Denying Call!"); 
+    notifications.actionNegative(incomingCallNotificationUUID);
 }
+
+ 
+ 
