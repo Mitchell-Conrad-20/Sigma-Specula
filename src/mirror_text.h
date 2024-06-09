@@ -6,7 +6,7 @@ void drawChar(const uint8_t *charBitmap, int x, int y, int font_size, uint16_t c
     for (int col = 0; col < font_size; col++) {
       bool pixelOn = charBitmap[row] & (1 << col);
       if (pixelOn) {
-        display.drawPixel(x + col, y + row, color); // Change to x + col
+        display->drawPixel(x + col, y + row, color); // Change to x + col
       }
     }
   }
@@ -19,7 +19,7 @@ void drawMirroredChar(const uint8_t *charBitmap, int x, int y, int font_size, ui
     for (int col = font_size - 1; col >= 0; col--) {  // Iterate in reverse order
       bool pixelOn = charBitmap[row] & (1 << col);
       if (pixelOn) {
-        display.drawPixel(x + (font_size - 1 - col), y + row, color);  // Change to x + (font_size - 1 - col)
+        display->drawPixel(x + (font_size - 1 - col), y + row, color);  // Change to x + (font_size - 1 - col)
       }
     }
   }

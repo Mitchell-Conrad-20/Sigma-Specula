@@ -1,9 +1,18 @@
 /*
+  Use: deinitialize the ESP_8bit
+*/ 
+void deinit_display(){
+  display->stop();
+  Serial.println("Display is being powered off!");
+  delete display;
+}
+/*
   Use: initialize the ESP_8bit
 */ 
 void init_gfx(){
+  display = new ESP_8_BIT_GFX(false /* NTSC */, 16 /* RGB332 color */);
   // Initial setup of graphics library
-  display.begin();
+  display->begin();
 }
 /*
   Use: Reverse a text string for a mirrored display
@@ -19,6 +28,6 @@ String mirror_text(String text){
   Use: Clear the display 
 */
 void display_clear(){
-  display.waitForFrame();
-  display.fillScreen(0);
+  display->waitForFrame();
+  display->fillScreen(0);
 }

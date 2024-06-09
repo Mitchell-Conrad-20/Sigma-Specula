@@ -1,5 +1,5 @@
 #include "esp32notifications.h"
-
+#include <BLEDevice.h>
 //------------ ANCS Variables ------------//
 
 // Create an interface to the BLE notification library
@@ -10,18 +10,10 @@ uint32_t incomingCallNotificationUUID;
 const char* device_name = "SigmaSpecula";
 // ------------------------------------- // 
 void onBLEStateChanged(BLENotifications::State state) {
-  switch(state) {
-      case BLENotifications::StateConnected:
-          Serial.println("StateConnected - connected to a phone or tablet"); 
-          break;
-
-      case BLENotifications::StateDisconnected:
-          Serial.println("StateDisconnected - disconnected from a phone or tablet"); 
-          /* We need to startAdvertising on disconnection, otherwise the ESP 32 will now be invisible.
-          IMO it would make sense to put this in the library to happen automatically, but some people in the Espressif forums
-          were requesting that they would like manual control over re-advertising.*/
-          notifications.startAdvertising(); 
-          break; 
+  switch (state) {
+    case BLENotifications::StateConnected:
+      Serial.println("StateConnected - connected to Glass");
+      break;
   }
 }
 // A notification arrived from the mobile device, ie a social media notification or incoming call.
@@ -46,8 +38,6 @@ void onNotificationArrived(const ArduinoNotification * notification, const Notif
         incomingCallNotificationUUID = 0; // Make invalid - no incoming call
     }
 }
-
-
 // A notification was cleared
 void onNotificationRemoved(const ArduinoNotification * notification, const Notification * rawNotificationData) {
      Serial.print("Removed notification: ");   
@@ -55,24 +45,25 @@ void onNotificationRemoved(const ArduinoNotification * notification, const Notif
      Serial.println(notification->message);
      Serial.println(notification->type);  
 }
-
-
 // Standard Arduino function which is called once when the device first starts up
 void init_ancs() {
     Serial.println("ESP32-ANCS-Notifications Initiating");
     Serial.println("------------------------------------------");    
     // Set up the BLENotification library
-    notifications.begin("BLEConnection device name");
+    notifications.begin(device_name);
     notifications.setConnectionStateChangedCallback(onBLEStateChanged);
     notifications.setNotificationCallback(onNotificationArrived);
     notifications.setRemovedCallback(onNotificationRemoved);
 }
-
+void stop_ancs() {
+  notifications.stop();
+  BLEDevice::deinit();
+  Serial.println("ANCS is turned off!");
+}
 void accept_incoming_call(){
     Serial.println("Receiving Call!"); 
     notifications.actionPositive(incomingCallNotificationUUID);
 }
-
 void deny_incoming_call(){
     Serial.println("Denying Call!"); 
     notifications.actionNegative(incomingCallNotificationUUID);
