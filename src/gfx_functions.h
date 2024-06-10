@@ -3,14 +3,15 @@
 */ 
 void deinit_display(){
   display->stop();
-  Serial.println("Display is being powered off!");
+  Serial.println("Display is being powered OFF!");
   delete display;
 }
 /*
   Use: initialize the ESP_8bit
 */ 
 void init_gfx(){
-  display = new ESP_8_BIT_GFX(false /* NTSC */, 16 /* RGB332 color */);
+  Serial.println("Display is being powered ON!");
+  display = new ESP_8_BIT_GFX(true /* NTSC */, 16 /* RGB332 color */);
   // Initial setup of graphics library
   display->begin();
 }

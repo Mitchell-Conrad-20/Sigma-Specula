@@ -1,14 +1,13 @@
-#include "esp32notifications.h"
-#include <BLEDevice.h>
-//------------ ANCS Variables ------------//
+ 
 
-// Create an interface to the BLE notification library
-BLENotifications notifications;
-// Holds the incoming call's ID number, or zero if no notification
-uint32_t incomingCallNotificationUUID;
-// Device name (What shows up in BLE menu)
-const char* device_name = "SigmaSpecula";
+
 // ------------------------------------- // 
+// Standard Arduino function which is called once when the device first starts up
+void stop_ancs() {
+  notifications.stop();
+  BLEDevice::deinit();
+  Serial.println("ANCS is turned off!");
+}
 void onBLEStateChanged(BLENotifications::State state) {
   switch (state) {
     case BLENotifications::StateConnected:
@@ -29,6 +28,7 @@ void onNotificationArrived(const ArduinoNotification * notification, const Notif
     Serial.println(notification->type);  // Which app sent it
     Serial.println(notifications.getNotificationCategoryDescription(notification->category));  // ie "social media"
     Serial.println(notification->categoryCount); // How may other notifications are there from this app (ie badge number)
+     
     if (notification->category == CategoryIDIncomingCall) {
 		// If this is an incoming call, store it so that we can later send a user action.
         incomingCallNotificationUUID = notification->uuid;
@@ -45,7 +45,6 @@ void onNotificationRemoved(const ArduinoNotification * notification, const Notif
      Serial.println(notification->message);
      Serial.println(notification->type);  
 }
-// Standard Arduino function which is called once when the device first starts up
 void init_ancs() {
     Serial.println("ESP32-ANCS-Notifications Initiating");
     Serial.println("------------------------------------------");    
@@ -54,11 +53,6 @@ void init_ancs() {
     notifications.setConnectionStateChangedCallback(onBLEStateChanged);
     notifications.setNotificationCallback(onNotificationArrived);
     notifications.setRemovedCallback(onNotificationRemoved);
-}
-void stop_ancs() {
-  notifications.stop();
-  BLEDevice::deinit();
-  Serial.println("ANCS is turned off!");
 }
 void accept_incoming_call(){
     Serial.println("Receiving Call!"); 
