@@ -51,7 +51,13 @@
           "min_clearance": 0.5
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -170,7 +176,9 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
+      "track_widths": [
+        0.0
+      ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -197,7 +205,12 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -215,22 +228,7 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [
-      "pin_not_connected|2032000|1828800|7aec688e-d04d-4f9b-908c-312e63b77f75|00000000-0000-0000-0000-000000000000|/a8c606a5-861f-4fc4-bc4f-8db124604f29|/a8c606a5-861f-4fc4-bc4f-8db124604f29|",
-      "pin_not_driven|1079500|800100|190d666e-433c-4d94-aaf8-b32c9a35425c|00000000-0000-0000-0000-000000000000|/a8c606a5-861f-4fc4-bc4f-8db124604f29|/a8c606a5-861f-4fc4-bc4f-8db124604f29|",
-      "pin_not_driven|1079500|825500|f87d7c06-7f08-4613-92fd-ca3415dc1a15|00000000-0000-0000-0000-000000000000|/a8c606a5-861f-4fc4-bc4f-8db124604f29|/a8c606a5-861f-4fc4-bc4f-8db124604f29|",
-      "pin_not_driven|1079500|850900|db7c1ce9-13e5-48a7-8478-05f79463a273|00000000-0000-0000-0000-000000000000|/a8c606a5-861f-4fc4-bc4f-8db124604f29|/a8c606a5-861f-4fc4-bc4f-8db124604f29|",
-      "pin_not_driven|1079500|876300|10701494-30f5-4f49-81e6-56a59a1e68f2|00000000-0000-0000-0000-000000000000|/a8c606a5-861f-4fc4-bc4f-8db124604f29|/a8c606a5-861f-4fc4-bc4f-8db124604f29|",
-      "pin_not_driven|1079500|927100|567575ee-2edb-46ef-a4ce-837c0493e922|00000000-0000-0000-0000-000000000000|/a8c606a5-861f-4fc4-bc4f-8db124604f29|/a8c606a5-861f-4fc4-bc4f-8db124604f29|",
-      "pin_not_driven|1079500|952500|441d409f-cc73-49d5-a33f-d56cfc082d82|00000000-0000-0000-0000-000000000000|/a8c606a5-861f-4fc4-bc4f-8db124604f29|/a8c606a5-861f-4fc4-bc4f-8db124604f29|",
-      "pin_not_driven|698500|1955800|b21fb0c1-6c94-495b-981f-7cb96ef7e22e|00000000-0000-0000-0000-000000000000|/a8c606a5-861f-4fc4-bc4f-8db124604f29|/a8c606a5-861f-4fc4-bc4f-8db124604f29|",
-      "pin_not_driven|698500|2006600|d73ca6d6-4f91-4d40-b17f-2466e60aaa46|00000000-0000-0000-0000-000000000000|/a8c606a5-861f-4fc4-bc4f-8db124604f29|/a8c606a5-861f-4fc4-bc4f-8db124604f29|",
-      "pin_to_pin|3327400|1917700|02dc53fb-d344-4006-bc7e-138ff56ff59d|c7abf069-ec5b-4ecf-8d8c-08900eda1a41|/a8c606a5-861f-4fc4-bc4f-8db124604f29|/a8c606a5-861f-4fc4-bc4f-8db124604f29|/a8c606a5-861f-4fc4-bc4f-8db124604f29",
-      "power_pin_not_driven|1079500|749300|6944b337-30f0-4d47-b9fa-fb8ee74efd53|00000000-0000-0000-0000-000000000000|/a8c606a5-861f-4fc4-bc4f-8db124604f29|/a8c606a5-861f-4fc4-bc4f-8db124604f29|",
-      "power_pin_not_driven|1739900|1282700|e85dfa25-945c-4d64-b1e7-7e213aa55794|00000000-0000-0000-0000-000000000000|/a8c606a5-861f-4fc4-bc4f-8db124604f29|/a8c606a5-861f-4fc4-bc4f-8db124604f29|",
-      "power_pin_not_driven|2984500|698500|e811f522-3b23-4bc0-8643-a3dbfaff9977|00000000-0000-0000-0000-000000000000|/a8c606a5-861f-4fc4-bc4f-8db124604f29|/a8c606a5-861f-4fc4-bc4f-8db124604f29|",
-      "power_pin_not_driven|3175000|1917700|665269fc-489c-4705-ad6a-77fdbffa40b4|00000000-0000-0000-0000-000000000000|/a8c606a5-861f-4fc4-bc4f-8db124604f29|/a8c606a5-861f-4fc4-bc4f-8db124604f29|"
-    ],
+    "erc_exclusions": [],
     "meta": {
       "version": 0
     },
@@ -428,7 +426,7 @@
       "net_not_bus_member": "warning",
       "no_connect_connected": "warning",
       "no_connect_dangling": "warning",
-      "pin_not_connected": "warning",
+      "pin_not_connected": "error",
       "pin_not_driven": "error",
       "pin_to_pin": "warning",
       "power_pin_not_driven": "error",
@@ -482,7 +480,7 @@
       "netlist": "",
       "plot": "",
       "pos_files": "",
-      "specctra_dsn": "",
+      "specctra_dsn": "../../../../../Desktop/Main_PCB.dsn",
       "step": "",
       "svg": "",
       "vrml": ""
@@ -540,53 +538,11 @@
           "label": "DNP",
           "name": "${DNP}",
           "show": true
-        },
-        {
-          "group_by": false,
-          "label": "#",
-          "name": "${ITEM_NUMBER}",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "MANUFACTURER",
-          "name": "MANUFACTURER",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "MAXIMUM_PACKAGE_HEIGHT",
-          "name": "MAXIMUM_PACKAGE_HEIGHT",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "PARTREV",
-          "name": "PARTREV",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "SNAPEDA_PN",
-          "name": "SNAPEDA_PN",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "STANDARD",
-          "name": "STANDARD",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Description",
-          "name": "Description",
-          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
-      "name": "",
+      "name": "Grouped By Value",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -618,14 +574,6 @@
       "version": 1
     },
     "net_format_name": "",
-    "ngspice": {
-      "fix_include_paths": true,
-      "meta": {
-        "version": 0
-      },
-      "model_mode": 4,
-      "workbook_filename": ""
-    },
     "page_layout_descr_file": "",
     "plot_directory": "",
     "spice_current_sheet_as_root": false,
