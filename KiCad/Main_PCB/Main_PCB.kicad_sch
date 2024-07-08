@@ -10011,7 +10011,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_DIP_SPSTx01_Slide_6.7x4.1mm_W6.73mm_P2.54mm_LowProfile_JPin"
+		(property "Footprint" "Button_Switch_SMD:SW_DIP_SPSTx01_Slide_Copal_CHS-01B_W7.62mm_P1.27mm"
 			(at 360.68 88.9 0)
 			(effects
 				(font
@@ -10079,7 +10079,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_C_Receptacle_Amphenol_12401548E4-2A"
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4085"
 			(at 191.77 190.5 0)
 			(effects
 				(font
@@ -10188,7 +10188,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 143.51 192.405 0)
 			(effects
 				(font
@@ -10526,7 +10526,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "64bf9395-f254-4fd5-a219-b97698fbaa16")
 		(property "Reference" "C14"
 			(at 345.44 198.1199 0)
@@ -10535,11 +10534,10 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
 			)
 		)
 		(property "Value" "10uF"
-			(at 345.44 200.6599 0)
+			(at 345.694 200.152 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11152,7 +11150,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 143.51 201.295 0)
 			(effects
 				(font
