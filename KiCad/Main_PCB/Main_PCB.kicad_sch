@@ -7130,6 +7130,17 @@
 		(uuid "9d5665df-dc2e-4087-bce5-dd894d9703fe")
 	)
 	(label "EN"
+		(at 41.91 99.06 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9e8ac22a-0311-432f-9cc0-34212e2a1b81")
+	)
+	(label "EN"
 		(at 149.86 182.88 180)
 		(fields_autoplaced yes)
 		(effects
