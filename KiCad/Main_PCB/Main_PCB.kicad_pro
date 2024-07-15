@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.0,
-          "height": 5.5118,
-          "width": 5.5118
+          "drill": 0.4,
+          "height": 0.7,
+          "width": 0.7
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -58,7 +58,12 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "clearance|123304619|108654620|1933981e-f1f8-4686-9a4e-8cf937eeb5d3|ef9b6fa0-bd22-426e-bbca-d1401baf52fe",
+        "copper_edge_clearance|117250000|107080000|b49c8508-d6e7-43fa-877e-3f33c6545ef6|1a7e2556-242f-4b6e-a3cd-7de11e9174c5",
+        "copper_edge_clearance|117250000|110810000|b49c8508-d6e7-43fa-877e-3f33c6545ef6|4c8fcd77-330a-4fa3-943d-4bfdac288880",
+        "copper_edge_clearance|125900000|111610000|b49c8508-d6e7-43fa-877e-3f33c6545ef6|5a4f4ffa-28de-474c-b12a-1f5a7c88ccf7"
+      ],
       "meta": {
         "version": 2
       },
@@ -95,7 +100,7 @@
         "padstack": "warning",
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
-        "silk_edge_clearance": "warning",
+        "silk_edge_clearance": "ignore",
         "silk_over_copper": "warning",
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
@@ -478,7 +483,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "../../../../../Desktop/Gerber/",
+      "plot": "../../../../Gerber/",
       "pos_files": "../../../../../Desktop/Gerber/",
       "specctra_dsn": "../../../../../Desktop/Main_PCB.dsn",
       "step": "",
