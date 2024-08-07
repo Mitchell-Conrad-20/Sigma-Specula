@@ -18,16 +18,19 @@ class QuickCapTouch {
     // Get State - Returns the value of the state member
     int getState();
 
+    void calibrate();
+    long calibration_val;
+
   private:
     // Variables
     uint8_t input_pin;
     uint8_t samples;
     int threshold;
     uint8_t state;
-    long calibration_val;
+    // long calibration_val;
 
     // Methods
-    void calibrate();
+    // void calibrate();
 };
 
 #endif // QUICKCAPTOUCH_H
